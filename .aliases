@@ -1,4 +1,4 @@
 alias t='todo.sh -tcA -d ~/.todo/todo.config'
 alias tmaybe='todo.sh -tcA -d ~/.todo/maybe.config'
-alias tgoals='todo.sh -tcA -d ~/.todo/goalsconfig'
+alias tgoals='todo.sh -tcA -d ~/.todo/goals.config'
 
