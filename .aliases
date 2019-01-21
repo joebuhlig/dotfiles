@@ -1,0 +1,2 @@
+alias t='todo.sh -tcA -d ~/.todo/config'
+alias tmaybe='todo.sh -tcA -d ~/.todo/maybe.config'
