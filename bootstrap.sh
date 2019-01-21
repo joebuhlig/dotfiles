@@ -39,4 +39,4 @@ else
 	git clone git@github.com:joebuhlig/todo.git $HOME/.todo
 fi
 
-
+chmod +x $HOME/.todo/actions/.
