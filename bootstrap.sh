@@ -16,7 +16,7 @@ if [ -d "$HOME/.vim" ]
 then
 	git -C $HOME/.vim pull origin master
 else
-	git clone --recurse-submodules git@github.com/joebuhlig/vim.git $HOME/.vim
+	git clone --recurse-submodules git@github.com:joebuhlig/vim.git $HOME/.vim
 fi
 
 if [ ! -L $HOME/.vimrc ]
@@ -36,7 +36,7 @@ if [ -d "$HOME/.todo" ]
 then
 	git -C $HOME/.todo pull origin master
 else
-	git clone --recurse-submodules git@github.com/joebuhlig/todo.git $HOME/.todo
+	git clone --recurse-submodules git@github.com:joebuhlig/todo.git $HOME/.todo
 fi
 
 chmod +x $HOME/.todo/actions/.
