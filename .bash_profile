@@ -1,2 +1,2 @@
-. ~/.aliases
-. ~/.exports
+source $HOME/.aliases
+source $HOME/.exports

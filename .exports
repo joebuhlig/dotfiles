@@ -1,2 +1,4 @@
 export EDITOR='vim'
 export TODOTXT_DEFAULT_ACTION=ls
+
+export TZ=CST6
