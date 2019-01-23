@@ -40,3 +40,7 @@ else
 fi
 
 chmod +x $HOME/.todo/actions/.
+
+$ install tmux setup
+
+tmux source ~/.tmux.conf
