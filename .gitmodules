@@ -4,3 +4,9 @@
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule ".todo/actions/graph"]
+	path = .todo/actions/graph
+	url = git@github.com:timpulver/todo.txt-graph.git
+[submodule ".todo/actions/watch"]
+	path = .todo/actions/watch
+	url = git@github.com:kynda/todot.txt-watch.git
