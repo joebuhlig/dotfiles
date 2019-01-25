@@ -12,12 +12,13 @@ rsync --exclude ".git/" \
 
 source ~/.bash_profile;
 
+# install vim plugins
 echo 'installing plugins for vim'
 vim +PluginClean +qall
 vim +PluginInstall +qall
 
+# make todo actions usable
 chmod +x $HOME/.todo/actions/.
 
 # install tmux setup
-
 tmux source ~/.tmux.conf
