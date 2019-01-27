@@ -15,18 +15,19 @@ from datetime import datetime
 
 
 pattern = re.compile(r"t:(\d{4})-(\d{2})-(\d{2})")
-
+pattern2 = re.compile("h:1")
 
 def main(args=None):
 	now = datetime.now()
 	for line in sys.stdin:
 		match = pattern.search(line)
+                match2 = pattern2.search(line)
 		if match:
 			threshold = [int(i) for i in match.groups()]
 			if datetime(*threshold) < now:
 				print(line.strip())
-		else:
-			print(line.strip())
+                elif not match2:
+                    print(line.strip())
 	return True
 
 
