@@ -23,6 +23,7 @@ Plugin 'terryma/vim-multiple-cursors' " please let me use multiple cursors again
 Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-surround'
 Plugin 'freitass/todo.txt-vim' " provide syntax highlighting and actions for todo.txt
+Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()
 

@@ -42,69 +42,78 @@ class Colors(object):
 
     """A helper class to colorize strings"""
 
-            def __init__(self, state=False):
-                self.disabled = state
+    def __init__(self, state=False):
+        self.disabled = state
 
-                            def disable(self):
-                                self.disabled = True
+        def disable(self):
+            self.disabled = True
 
-                                            def enable(self):
-                                                self.disabled = False
+            def enable(self):
+                self.disabled = False
 
-                                                            def __getattr__(self, key):
-                                                                if key not in CCODES.keys():
-                                                                    raise AttributeError, "Colors object has no attribute '%s'" \
-                                                                            % key
-                                                                        else:
-                                                                            if self.disabled:
-                                                                                return lambda x: x
-                                                                            else:
-                                                                                return lambda x: RESET + CCODES[key] + x + RESET
+                def __getattr__(self, key):
+                    if key not in CCODES.keys():
+                        raise AttributeError, "Colors object has no attribute '%s'" \
+                                % key
+                    else:
+                            if self.disabled:
+                                return lambda x: x
+                            else:
+                                return lambda x: RESET + CCODES[key] + x + RESET
 
-                                                                            def __dir__(self):
-                                                                                return self.__class__.__dict__.keys() + CCODES.keys()
+                            def __dir__(self):
+                                return self.__class__.__dict__.keys() + CCODES.keys()
 
+                            def main(directory, cutoff_days=7):
+                                f = open(os.path.join(
+                                    directory, DONE), 'r')
+                                lines = f.readlines()
+                                today = datetime.datetime.today()
+                                cutoff = today - \
+                                        datetime.timedelta(
+                                                days=cutoff_days)
 
-                                                                            def main(directory, cutoff_days=7):
-                                                                                f = open(os.path.join(directory, DONE), 'r')
-                                                                                                                                                                                                            lines = f.readlines()
-                                                                                                                                                                                                                today = datetime.datetime.today()
-                                                                                                                                                                                                                    cutoff = today - datetime.timedelta(days=cutoff_days)
+                                c = Colors()
+                                if os.environ['TODOTXT_PLAIN'] == '1':
+                                    c.disable()
 
-                                                                                                                                                                                                                        c = Colors()
-                                                                                                                                                                                                                            if os.environ['TODOTXT_PLAIN'] == '1':
-                                                                                                                                                                                                                                c.disable()
-
-                                                                                                                                                                                                                                            print c.red('''
+                                    print c.red('''
                                                                                                                                                                                                                                             Closed tasks since %s
                                                                                                                                                                                                                                             '''
                                                                                                                                                                                                                                             % cutoff.strftime('%Y-%m-%d'))
 
-                                                                                                                                                                                                                                            for line in lines:
-                                                                                                                                                                                                                                                m = re.match("x ([\d]{4}-[\d]{2}-[\d]{2}).*", line)
-                                                                                                                                                                                                                                                                    if m is not None:
-                                                                                                                                                                                                                                                                        done = m.group(1)
-                                                                                                                                                                                                                                                                                                (year, month, day) = m.group(1).split('-')
-                                                                                                                                                                                                                                                                                                            completed = datetime.datetime(int(year), int(month),
-                                                                                                                                                                                                                                                                                                                    int(day))
-                                                                                                                                                                                                                                                                                                            if completed >= cutoff:
-                                                                                                                                                                                                                                                                                                                print c.green(m.group(1)) + ' ' \
-                                                                                                                                                                                                                                                                                                                        + c.blue(line.replace('x %s' % m.group(1), ''
-                                                                                                                                                                                                                                                                                                                            ).strip())
+                                    for line in lines:
+                                        m = re.match(
+                                                "x ([\d]{4}-[\d]{2}-[\d]{2}).*", line)
+                                        if m is not None:
+                                            done = m.group(
+                                                    1)
+                                            (year, month, day) = m.group(
+                                                    1).split('-')
+                                            completed = datetime.datetime(int(year), int(month),
+                                                    int(day))
+                                            if completed >= cutoff:
+                                                print c.green(m.group(1)) + ' ' \
+                                                        + c.blue(line.replace('x %s' % m.group(1), ''
+                                                            ).strip())
 
-                                                                                                                                                                                                                                                                                                                        print ''
+                                                print ''
 
+                                                if __name__ == '__main__':
+                                                    if len(sys.argv) < 2:
+                                                        print 'Usage: lately.py [TODO_DIR] <days back>'
+                                                        sys.exit(
+                                                                1)
 
-                                                                                                                                                                                                                                                                                                                                                                            if __name__ == '__main__':
-                                                                                                                                                                                                                                                                                                                                                                                if len(sys.argv) < 2:
-                                                                                                                                                                                                                                                                                                                                                                                    print 'Usage: lately.py [TODO_DIR] <days back>'
-                                                                                                                                                                                                                                                                                                                                                                                                        sys.exit(1)
-
-                                                                                                                                                                                                                                                                                                                                                                                                            if os.path.isdir(sys.argv[1]):
-                                                                                                                                                                                                                                                                                                                                                                                                                if len(sys.argv) is 3:
-                                                                                                                                                                                                                                                                                                                                                                                                                    main(sys.argv[1], int(sys.argv[2]))
-                                                                                                                                                                                                                                                                                                                                                                                                                else:
-                                                                                                                                                                                                                                                                                                                                                                                                                    main(sys.argv[1])
-                                                                                                                                                                                                                                                                                                                                                                                                                else:
-                                                                                                                                                                                                                                                                                                                                                                                                                    print 'Error: %s is not a directory' % sys.argv[1]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        sys.exit(1)
+                                                        if os.path.isdir(sys.argv[1]):
+                                                            if len(sys.argv) is 3:
+                                                                main(sys.argv[1], int(
+                                                                    sys.argv[2]))
+                                                            else:
+                                                                main(
+                                                                        sys.argv[1])
+                                                        else:
+                                                                print 'Error: %s is not a directory' % sys.argv[
+                                                                        1]
+                                                                sys.exit(
+                                                                        1)
