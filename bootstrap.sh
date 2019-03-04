@@ -16,7 +16,7 @@ vim +PluginClean +qall
 vim +PluginInstall +qall
 
 # make todo actions usable
-chmod +x $HOME/.todo/actions/.
+chmod -R +x $HOME/.todo/actions
 
 # install tmux setup
 tmux source ~/.tmux.conf
