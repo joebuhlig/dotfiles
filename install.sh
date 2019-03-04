@@ -16,8 +16,5 @@ rm v2.11.0.tar.gz
 gem install ice_cube
 gem install optimist
 
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
-
-wget -O /usr/local/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
-chmod 755 /usr/local/bin/dropbox.py
+cp $HOME/dotfiles/.todo/todo_completion /usr/local/bin/
+chmod +x /usr/local/bin/todo_completion
