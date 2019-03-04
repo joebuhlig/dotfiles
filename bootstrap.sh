@@ -10,8 +10,6 @@ rsync --exclude ".git/" \
 	--exclude "LICENSE.txt" \
 	-avh --no-perms . ~;
 
-source ~/.bash_profile;
-
 # install vim plugins
 echo 'installing plugins for vim'
 vim +PluginClean +qall
@@ -22,3 +20,6 @@ chmod +x $HOME/.todo/actions/.
 
 # install tmux setup
 tmux source ~/.tmux.conf
+
+source ~/.bash_profile;
+
