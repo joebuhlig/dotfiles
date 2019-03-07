@@ -1,12 +1,10 @@
 alias t='todo.sh -tcA -d ~/.todo/todo.config'
 complete -F _todoMain t
-alias tmaybe='todo.sh -tcA -d ~/.todo/maybe.config'
-complete -F _todoMaybe tmaybe
-alias tgoals='todo.sh -tcA -d ~/.todo/goals.config'
-complete -F _todoGoals tgoals
-alias twork='todo.sh -tcA -d ~/.todo/work.config'
-complete -F _todoWork twork
+alias tm='todo.sh -tcA -d ~/.todo/maybe.config'
+complete -F _todoMaybe tm
+alias tg='todo.sh -tcA -d ~/.todo/goals.config'
+complete -F _todoGoals tg
+alias tw='todo.sh -tcA -d ~/.todo/work.config'
+complete -F _todoWork tw
 alias tp='todo.sh -tcA -d ~/.todo/projects.config'
 complete -F _todoProjects tp
-
-alias dropbox='dropbox.py'
