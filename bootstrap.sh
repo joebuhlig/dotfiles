@@ -5,7 +5,7 @@ rsync --exclude ".git/" \
 	--exclude ".DS_Store" \
 	--exclude ".osx" \
 	--exclude "bootstrap.sh" \
-	--exclude "install.sh" \
+	--exclude "linux-install.sh" \
 	--exclude "README.md" \
 	--exclude "LICENSE.txt" \
 	-avh --no-perms . ~;
