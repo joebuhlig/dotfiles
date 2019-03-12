@@ -10,3 +10,6 @@
 [submodule ".todo/actions/watch"]
 	path = .todo/actions/watch
 	url = git@github.com:kynda/todot.txt-watch.git
+[submodule ".todo/actions/due"]
+	path = .todo/actions/due
+	url = git@github.com:rebeccamorgan/due.git

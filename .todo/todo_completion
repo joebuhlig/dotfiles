@@ -124,6 +124,15 @@ _todoProjects()
 }
 
 complete -F _todoProjects tp
+
+_todoCalendar()
+{
+  local _todo_sh='todo.sh -d "$HOME/.todo/calendar.config"'
+  _todo "$@"
+}
+
+complete -F _todoCalendar c
+
 # If you define an alias (e.g. "t") to todo.sh, you need to explicitly enable
 # completion for it, too:
 #complete -F _todo t

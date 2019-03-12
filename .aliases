@@ -8,3 +8,5 @@ alias tw='todo.sh -tcA -d ~/.todo/work.config'
 complete -F _todoWork tw
 alias tp='todo.sh -tcA -d ~/.todo/projects.config'
 complete -F _todoProjects tp
+alias c='todo.sh -tcA -d ~/.todo/calendar.config'
+complete -F _todoCalendar c
