@@ -24,6 +24,8 @@ Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-surround'
 Plugin 'freitass/todo.txt-vim' " provide syntax highlighting and actions for todo.txt
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'tomtom/autolinker_vim'
+Plugin 'tomtom/tlib_vim'
 
 call vundle#end()
 
