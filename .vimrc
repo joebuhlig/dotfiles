@@ -5,8 +5,6 @@ set nocompatible              " be iMproved, required
 set number
 set noshowmode
 
-set mouse=a
-
 filetype off                  " required
 
 so ~/.vim/plugins.vim
