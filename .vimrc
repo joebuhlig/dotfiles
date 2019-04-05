@@ -5,6 +5,10 @@ set nocompatible              " be iMproved, required
 set number
 set noshowmode
 
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 set mouse=a
 
 filetype off                  " required
