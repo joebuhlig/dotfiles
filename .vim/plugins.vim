@@ -24,6 +24,8 @@ Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-surround'
 Plugin 'freitass/todo.txt-vim' " provide syntax highlighting and actions for todo.txt
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'Alok/notational-fzf-vim'
+
 Plugin 'vimwiki/vimwiki'
 Plugin 'michal-h21/vim-zettel'
 
