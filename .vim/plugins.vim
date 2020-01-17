@@ -20,6 +20,7 @@ Plugin 'pangloss/vim-javascript' " syntax highlighting for javascript
 " Plugin 'plasticboy/vim-markdown' " syntax highlighting and commands for markdown
 Plugin 'terryma/vim-multiple-cursors' " please let me use multiple cursors again
 " Plugin 'reedes/vim-pencil'
+Plugin 'junegunn/goyo.vim'
 Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-surround'
 Plugin 'freitass/todo.txt-vim' " provide syntax highlighting and actions for todo.txt

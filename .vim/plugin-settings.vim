@@ -11,10 +11,11 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
 " notational-fzf-vim
-let g:nv_search_paths = ['~/notes.joebuhlig']
+let g:nv_search_paths = ['~/Documents/zettelkasten','~/Documents']
 let g:nv_default_extension = '.txt'
 let g:nv_use_short_pathnames = 1
 let g:nv_show_filepath = 0
+let g:nv_create_note_window = 'e'
 
 autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
 

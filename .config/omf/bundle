@@ -1,0 +1,13 @@
+package bass
+package brew
+package colored-man-pages
+package config
+package fzf
+package git-flow
+package rvm
+package spark
+package weather
+theme default
+theme jacaetevha
+theme lambda
+theme neolambda
